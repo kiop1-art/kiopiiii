@@ -56,7 +56,7 @@ document.getElementById('_30_8_tg_1').addEventListener("click", function() {
 });
 
 document.getElementById('_34_17_icons8-____________-_________-____________-2-50_1').addEventListener("click", function() {
-    window.location.href = "https://music.yandex.ru/users/kiopiplay/playlists/3?utm_medium=copy_link";
+    window.location.href = "https://music.yandex.ru/users/(name)play/playlists/3?utm_medium=copy_link";
 });
 
 document.getElementById('_40_20_icons8-_____-50_1').addEventListener("click", playPause);
