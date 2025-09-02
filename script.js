@@ -16,10 +16,10 @@ const tracks = [
 function playPause() {
     if (audioPlayer.paused) {
         audioPlayer.play();
-        document.getElementById('_40_20_icons8-_____-50_1').style.opacity = '0.5'; // Эффект нажатия
+        document.getElementById('_40_20_icons8-_____-50_1').style.opacity = '0.5';
     } else {
         audioPlayer.pause();
-        document.getElementById('_40_20_icons8-_____-50_1').style.opacity = '1'; // Эффект отжатия
+        document.getElementById('_40_20_icons8-_____-50_1').style.opacity = '1';
     }
 }
 
@@ -27,9 +27,9 @@ function nextTrack() {
     currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
     audioPlayer.src = tracks[currentTrackIndex];
     audioPlayer.play();
-    document.getElementById('_40_21_icons8-_____-50_1').style.opacity = '0.5'; // Эффект нажатия
+    document.getElementById('_40_21_icons8-_____-50_1').style.opacity = '0.5';
     setTimeout(() => {
-        document.getElementById('_40_21_icons8-_____-50_1').style.opacity = '1'; // Эффект отжатия
+        document.getElementById('_40_21_icons8-_____-50_1').style.opacity = '1';
     }, 100);
 }
 
@@ -37,9 +37,9 @@ function prevTrack() {
     currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
     audioPlayer.src = tracks[currentTrackIndex];
     audioPlayer.play();
-    document.getElementById('_40_22_icons8-_____-50_2').style.opacity = '0.5'; // Эффект нажатия
+    document.getElementById('_40_22_icons8-_____-50_2').style.opacity = '0.5';
     setTimeout(() => {
-        document.getElementById('_40_22_icons8-_____-50_2').style.opacity = '1'; // Эффект отжатия
+        document.getElementById('_40_22_icons8-_____-50_2').style.opacity = '1';
     }, 100);
 }
 
@@ -56,17 +56,16 @@ document.getElementById('_30_8_tg_1').addEventListener("click", function() {
 });
 
 document.getElementById('_34_17_icons8-____________-_________-____________-2-50_1').addEventListener("click", function() {
-    window.location.href = "https://music.yandex.ru/users/(name)play/playlists/3?utm_medium=copy_link";
+    window.location.href = "https://music.yandex.ru/users/(name)/playlists/3?utm_medium=copy_link";
 });
 
 document.getElementById('_40_20_icons8-_____-50_1').addEventListener("click", playPause);
 document.getElementById('_40_21_icons8-_____-50_1').addEventListener("click", nextTrack);
 document.getElementById('_40_22_icons8-_____-50_2').addEventListener("click", prevTrack);
 
-document.getElementById('startButton').addEventListener("click", function() {
-    audioPlayer.play().then(() => {
-        document.getElementById('startButton').style.display = 'none'; // Скрыть кнопку после нажатия
-    }).catch(error => {
-        console.error('Произошла ошибка:', error);
+window.addEventListener('load', () => {
+    audioPlayer.src = tracks[currentTrackIndex];
+    audioPlayer.play().catch(() => {
+        console.('kiopi');
     });
 });
